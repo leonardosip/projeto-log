@@ -24,7 +24,7 @@
     margin-top: 60px;
 }
 
-button{
+.entry{
     border-radius: 15px;
     width: 100px;
     margin-top: 35px;
@@ -37,7 +37,7 @@ button{
     margin-bottom: 40px;
 }
 
-button:hover {
+.entry:hover {
     background-color: #521a96;
     color: aliceblue;
     box-shadow: 0 0 10px #521a96, 0 0 15px #521a96, 0 0 25px #521a96;
