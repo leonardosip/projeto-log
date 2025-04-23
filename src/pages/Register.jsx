@@ -53,7 +53,7 @@ function Register(){
                     onChange={(e) => setEmail(e.target.value)} /> <br />
 
                 <input type='password'
-                    autoComplete={false}
+                    autoComplete='off'
                     placeholder='Digite sua senha..'
                     value={password}
                     onChange={(e) => setPassword(e.target.value)} /> <br />
