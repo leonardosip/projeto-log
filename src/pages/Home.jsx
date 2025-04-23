@@ -1,20 +1,37 @@
 import './home.css'
 import { useState } from 'react';
+
 import { Link } from 'react-router-dom'
+
+import {auth} from '../firebaseConnection'
+import { signInWithEmailAndPassword } from "firebase/auth";
+
+import { useNavigate } from 'react-router-dom';
 
 function Home() {
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
+    const navigate = useNavigate();
 
-    function handleLogin(e){
+
+     async function handleLogin(e){
         e.preventDefault();
         
         if(email !== '' && password !== ''){
 
+            await signInWithEmailAndPassword(auth, email, password)
+
+            .then(() => {
+                navigate('/admin', {replace: true})
+            })
+            .catch((error) => {
+                alert('erro ao fazer o login' + error.message)
+            })
+
         }else{
-            alert('Preencha todos os campos')
+            alert('Erro ao fazer o login: ')
         }
 
     }
@@ -37,7 +54,7 @@ function Home() {
                     onChange={(e) => setEmail(e.target.value)} /> <br />
 
                 <input type='password'
-                    autoComplete={false}
+                    autoComplete='off'
                     placeholder='Digite sua senha..'
                     value={password}
                     onChange={(e) => setPassword(e.target.value)} /> <br />
