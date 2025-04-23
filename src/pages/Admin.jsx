@@ -3,16 +3,37 @@ import { useState, useEffect} from 'react'
 
 import {auth, db} from '../firebaseConnection'
 import { signOut } from 'firebase/auth';
-import { addDoc, collection } from 'firebase/firestore';
+import { addDoc, collection, onSnapshot, query, orderBy, where } from 'firebase/firestore';
 
 export default function Admin() {
     const [tarefaInput, setTarefaInput] = useState('');
     const [user, setUser] = useState('');
+    const [tarefas, setTarefas] = useState([]);
 
     useEffect(() => {
         async function loadTarefas(){
           const userDetail = localStorage.getItem("@detailUser")
           setUser(JSON.parse(userDetail))
+
+          if(userDetail){
+            const data = JSON.parse(userDetail);
+
+            const tarefaRef = collection(db, 'tarefas')
+            const q = query(tarefaRef, orderBy('created', 'desc'), where('userUid', '==', data?.uid))
+            
+            const unsub = onSnapshot (q, (snapshot) => {
+                let lista = [];
+
+                snapshot.forEach((doc) => {
+                    lista.push({
+                        id: doc.id,
+                        tarefa: doc.data().tarefa,
+                        userUid: doc.data().userUid
+                    })
+                })
+                setTarefas(lista);
+            })
+         }
         }
     
         loadTarefas();
@@ -61,13 +82,15 @@ export default function Admin() {
                     <button type='submit' className='reg'>Registrar Tarefa</button>
                 </form>
 
-                <article>
-                    <p>Estudar Js</p>
+                {tarefas.map ((item) => (
+                    <article key={item.id}>
+                    <p>{item.tarefa}</p>
                     <div className='botoes'>
                         <button className='btnE'>Editar</button>
                         <button className='btnC'>Concluir</button>
                     </div>
                 </article>
+                ))}
 
                 <button className='btn-logout' onClick={handleLogout}>Sair</button>
             </div>

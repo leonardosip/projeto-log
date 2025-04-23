@@ -3,17 +3,17 @@
     border-radius: 17px;
     padding: 60px 30px;
 
+    margin: 30px auto;
+
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 
     text-align: center;
 
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    min-height: 100vh;
 }
 
 
