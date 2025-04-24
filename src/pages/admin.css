@@ -43,9 +43,9 @@ textarea {
 }
 
 .reg:hover {
-    background-color: #521a96;
+    background-color: #22a84a;
     color: aliceblue;
-    box-shadow: 0 0 10px #521a96, 0 0 15px #521a96, 0 0 25px #521a96;
+    box-shadow: 0 0 10px #22a84a, 0 0 15px #22a84a, 0 0 25px #22a84a;
     transform: scale(1.05);
 }
 
@@ -117,15 +117,15 @@ p {
 }
 
 .btn-logout {
-    border-radius: 15px;
-    width: 100px;
-    padding: 11px;
+    border-radius: 100px;
+    width: 62px;
+    padding: 20px;
     background-color: rgb(48, 46, 46);
     color: white;
     border: none;
     transition: all 0.3s ease;
     box-shadow: 0 0 0 transparent;
-    margin-bottom: 40px;
+    margin-top: 40px;
 }
 
 .btn-logout:hover {
