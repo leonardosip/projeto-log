@@ -1,4 +1,4 @@
-# React + Vite
+# React + Firebase + Login
 
 Aplicação web desenvolvida com React que utiliza o Firebase Authentication 
 para gerenciamento de login. Permite aos usuários acessarem o sistema de forma segura por
