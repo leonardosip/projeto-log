@@ -1,12 +1,8 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Aplicação web desenvolvida com React que utiliza o Firebase Authentication 
+para gerenciamento de login. Permite aos usuários acessarem o sistema de forma segura por
+meio de email e senha, com validação em tempo real. A autenticação é integrada ao banco de dados do
+Firebase, garantindo persistência e segurança dos dados. A interface é simples, responsiva e intuitiva, ideal para fluxos de 
+autenticação em aplicações modernas. Utiliza React Router para navegação e componentes reutilizáveis para manter o código 
+organizado e escalável.... Além de poder criar, excluir e alterar as tarefas a serem feitas de acordo com o login
